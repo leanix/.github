@@ -1,0 +1,9 @@
+{
+    "name": "SAP LeanIX AI Code Review workflow",
+    "description": "SAP LeanIX AI Code Review workflow template. (Requires repository secret `AICORE_SERVICE_KEY`)",
+    "iconName": "octicon comment",
+    "categories": [
+        "code-review"
+    ],
+    "filePatterns": []
+}

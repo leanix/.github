@@ -1,0 +1,28 @@
+# This AI Code review workflow is provided by team-butterfly.
+# For feedback please reach out to Slack #team-butterfly.
+name: AI Code Review
+on:
+  pull_request:
+    types: [review_requested]
+
+jobs:
+  review:
+    name: PR Review
+    if: github.event.requested_reviewer.login == 'leanix-ci'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get credentials
+        uses: leanix/secrets-action@master
+        with:
+          secret-store-credentials: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}
+
+      - uses: leanix/shared-github-workflows/ai-review@main
+        with:
+          # Place your AI Core service key (JSON) as a repository secret
+          aicore-service-key: ${{ secrets.AICORE_SERVICE_KEY }}
+          github-user-token: ${{ env.CD_BOT_BUTTERFLY }}
+          model: gpt-4o
+          # sample usage: review-instructions: ".github/review-instructions.md"
+          review-instructions: ""
+          exclude-files: package-lock.json
+          previous-results: hide
