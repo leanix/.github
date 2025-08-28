@@ -36,7 +36,7 @@ jobs:
         with:
           # The LLM used to create reviews
           model: gpt-4o
-          # A repository local text file with review instructions. E.g. ".github/review-instructions.md"
+          # A review instructions file (should be placed under the .github folder). E.g. ".github/review-instructions.md"
           review-instructions: ""
           # A comma separated list of files to review. Supports glob patterns
           include-files: "**"
