@@ -1,5 +1,21 @@
-# This AI Code review workflow is provided by team-butterfly.
-# For feedback please reach out to Slack #team-butterfly.
+# # Getting Started
+#
+# 1. Get a BTP AI Core service key: https://leanix.atlassian.net/wiki/spaces/EN/pages/9472772164/Getting+Started+with+SAP+Generative+AI+in+BTP+Development+Phase#How-to-Configure%3A
+#
+# 2. Create a repository secret `AICORE_SERVICE_KEY` with the key
+#
+# 3. Follow this guide to get the workflow: https://docs.github.com/en/actions/how-tos/write-workflows/use-workflow-templates
+#
+#
+# # How to Use AI reviews?
+# 
+# 1. On your pull request add "leanix-ci" as reviewer and wait for the workflow to finish!
+#
+#
+# # Feedback?
+#
+# Let us know what you think in Slack: #team-butterfly
+#
 name: AI Code Review
 on:
   pull_request:
@@ -18,11 +34,21 @@ jobs:
 
       - uses: leanix/shared-github-workflows/ai-review@main
         with:
-          # Place your AI Core service key (JSON) as a repository secret
-          aicore-service-key: ${{ secrets.AICORE_SERVICE_KEY }}
-          github-user-token: ${{ env.CD_BOT_BUTTERFLY }}
+          # The LLM used to create reviews
           model: gpt-4o
-          # sample usage: review-instructions: ".github/review-instructions.md"
+          # A repository local text file with review instructions. E.g. ".github/review-instructions.md"
           review-instructions: ""
+          # A comma separated list of files to review. Supports glob patterns
+          include-files: "**"
+          # A comma separated list of files excluded from review. Supports glob patterns
           exclude-files: package-lock.json
+          # Old comments 
           previous-results: hide
+          # A comma separated list of files providing more context for the review (e.g. repository specifics). Supports glob patterns
+          include-context-files: ""
+          # A comma separated list of excluded context files. Supports glob patterns
+          exclude-context-files: ""
+          # SAP BTP AI Core service key
+          aicore-service-key: ${{ secrets.AICORE_SERVICE_KEY }}
+          # The account that creates PR comments (Defaults to github-actions[bot]) 
+          github-user-token: ${{ env.CD_BOT_BUTTERFLY }}
