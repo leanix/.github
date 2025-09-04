@@ -34,21 +34,21 @@ jobs:
 
       - uses: leanix/shared-github-workflows/ai-review@main
         with:
-          # The LLM used to create reviews
+          # Specify the AI model to be used for creating reviews
           model: gpt-4o
-          # A review instructions file (should be placed under the .github folder). E.g. ".github/review-instructions.md"
+          # Path to the review instructions file, which guides the AI in evaluating the code changes (e.g. ".github/review-instructions.md").
           review-instructions: ""
           # A comma separated list of files to review. Supports glob patterns
           include-files: "**"
           # A comma separated list of files excluded from review. Supports glob patterns
           exclude-files: package-lock.json
-          # Old comments 
+          # Specify how previous AI review comments should be handled (e.g., hide or keep).
           previous-results: hide
-          # A comma separated list of files providing more context for the review (e.g. repository specifics). Supports glob patterns
+          # Specify additional context files for AI review, using comma-separated values and supporting glob patterns.
           include-context-files: ""
-          # A comma separated list of excluded context files. Supports glob patterns
+          # List context files to exclude from AI review, using comma-separated values and supporting glob patterns.
           exclude-context-files: ""
           # SAP BTP AI Core service key
           aicore-service-key: ${{ secrets.AICORE_SERVICE_KEY }}
-          # The account that creates PR comments (Defaults to github-actions[bot]) 
+          # Specify the GitHub user token for the account that posts AI-generated review comments (Defaults to github-actions[bot])
           github-user-token: ${{ env.CD_BOT_BUTTERFLY }}
