@@ -1,6 +1,10 @@
 {
-    "packageRules": {
-        "minimumReleaseAge": "3 days",
-        "internalChecksFilter": "strict"
+  "extends": ["config:best-practices"],
+  "internalChecksFilter": "strict",
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
     }
+  ]
 }
