@@ -1,16 +1,16 @@
-# # Getting Started
+## Getting Started
 #
-# 1. Get a BTP AI Core service key: https://leanix.atlassian.net/wiki/spaces/EN/pages/9472772164/Getting+Started+with+SAP+Generative+AI+in+BTP+Development+Phase#How-to-Configure%3A
+# Follow this guide to get the workflow: https://docs.github.com/en/actions/how-tos/write-workflows/use-workflow-templates
 #
-# 2. Create a repository secret `AICORE_SERVICE_KEY` with the key
-#
-# 3. Follow this guide to get the workflow: https://docs.github.com/en/actions/how-tos/write-workflows/use-workflow-templates
-#
-#
-# # How to Use AI reviews?
+## How to Use AI reviews?
 # 
 # 1. On your pull request add "leanix-ci" as reviewer and wait for the workflow to finish!
 #
+## Customizing the AI reviewer
+#
+# You can set `review-instructions` as path to repository specific review instructions.
+# Furthermore you can provide more context about your repository in context-files that
+# you can point to in `include-context-files`.
 #
 # # Feedback?
 #
@@ -31,6 +31,11 @@ jobs:
         uses: leanix/secrets-action@master
         with:
           secret-store-credentials: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}
+
+      - name: Decode and set AICORE_SERVICE_KEY
+        run: |
+          decoded_secret=$(echo "${{ env.GITHUB_REVIEW_ACTION_AICORE }}" | base64 --decode)
+          echo "AICORE_SERVICE_KEY=$decoded_secret" >> $GITHUB_ENV
 
       - uses: leanix/shared-github-workflows/ai-review@main
         with:
