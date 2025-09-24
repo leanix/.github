@@ -54,6 +54,6 @@ jobs:
           # List context files to exclude from AI review, using comma-separated values and supporting glob patterns.
           exclude-context-files: ""
           # SAP BTP AI Core service key
-          aicore-service-key: ${{ secrets.AICORE_SERVICE_KEY }}
+          aicore-service-key: ${{ env.AICORE_SERVICE_KEY }}
           # Specify the GitHub user token for the account that posts AI-generated review comments (Defaults to github-actions[bot])
           github-user-token: ${{ env.CD_BOT_BUTTERFLY }}
