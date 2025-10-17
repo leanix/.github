@@ -7,7 +7,7 @@
                 "digest"
             ],
             "automergeSchedule": [
-                "after 9am and before 2pm every weekday"
+                "* 9-14 * * 1-5"
             ],
             "automerge": true,
             "automergeType": "branch"
