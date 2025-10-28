@@ -9,6 +9,10 @@
     {
       "matchDatasources": ["npm"],
       "minimumReleaseAge": "3 days"
+    },
+    {
+      "matchPackageNames": ["io.kubernetes:client-java"],
+      "allowedVersions": "!/.*-legacy$/"
     }
   ]
 }
