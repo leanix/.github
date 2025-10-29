@@ -5,10 +5,5 @@
     ":pinAllExceptPeerDependencies"
   ],
   "internalChecksFilter": "strict",
-  "packageRules": [
-    {
-      "matchDatasources": ["npm"],
-      "minimumReleaseAge": "3 days"
-    }
-  ]
+  "minimumReleaseAge": "5 days"
 }
