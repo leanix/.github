@@ -21,7 +21,7 @@ jobs:
           files: |
             renovate.json
             default.json
-            renovate-presets/**"
+            renovate-presets/**
           matrix: true
 
   validate-renovate-configs:
