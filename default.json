@@ -5,5 +5,11 @@
     ":pinAllExceptPeerDependencies"
   ],
   "internalChecksFilter": "strict",
-  "minimumReleaseAge": "5 days"
+  "minimumReleaseAge": "5 days",
+  "packageRules": [
+    {
+      "matchPackageNames": ["io.kubernetes:client-java"],
+      "allowedVersions": "!/.*-legacy$/"
+    }
+  ]
 }
