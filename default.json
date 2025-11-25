@@ -12,7 +12,7 @@
       "allowedVersions": "!/.*-legacy$/"
     },
     {
-      "matchmatchDatasources": ["npm"],
+      "matchDatasources": ["npm"],
       "matchPackageNames": ["@leanix/*"],
       "minimumReleaseAge": null
     }
