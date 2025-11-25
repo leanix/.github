@@ -10,6 +10,11 @@
     {
       "matchPackageNames": ["io.kubernetes:client-java"],
       "allowedVersions": "!/.*-legacy$/"
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@leanix/*"],
+      "minimumReleaseAge": null
     }
   ]
 }
