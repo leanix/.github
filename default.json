@@ -12,7 +12,7 @@
       "allowedVersions": "!/.*-legacy$/"
     },
     {
-      "matchPackageNames": ["org.liquibase", "liquibase*"],
+      "matchPackageNames": ["org.liquibase:*", "liquibase*"],
       "matchDatasources": ["maven", "docker"],
       "allowedVersions": "<5.0"
     },
