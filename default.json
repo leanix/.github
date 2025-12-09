@@ -6,6 +6,7 @@
   ],
   "internalChecksFilter": "strict",
   "minimumReleaseAge": "5 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
   "packageRules": [
     {
       "matchPackageNames": ["io.kubernetes:client-java"],
