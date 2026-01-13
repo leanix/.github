@@ -2,7 +2,8 @@
   "enabled": true,
   "extends": [
     "config:best-practices",
-    ":pinAllExceptPeerDependencies"
+    ":pinAllExceptPeerDependencies",
+    "github>leanix/.github//renovate-presets/security.json5"
   ],
   "internalChecksFilter": "strict",
   "minimumReleaseAge": "5 days",
