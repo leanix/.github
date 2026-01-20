@@ -1,0 +1,9 @@
+{
+    "name": "Claude Code",
+    "description": "AI assistant that responds to @claude mentions in issues and pull requests",
+    "iconName": "octicon dependabot",
+    "categories": [
+        "automation"
+    ],
+    "filePatterns": []
+}
