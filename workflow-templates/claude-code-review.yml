@@ -1,0 +1,41 @@
+## Getting Started
+#
+# Follow this guide to get the workflow: https://docs.github.com/en/actions/how-tos/write-workflows/use-workflow-templates
+#
+## Prerequisites
+#
+# The Claude GitHub App must be installed on your repository: https://github.com/apps/claude
+#
+## How does Claude Code Review work?
+#
+# Claude automatically reviews your pull requests when they are:
+# - Opened
+# - Updated (new commits pushed)
+# - Marked as ready for review
+# - Reopened
+#
+# Draft PRs and Renovate branches are skipped.
+#
+## Customizing the Review
+#
+# You can pass a custom `review_prompt` input to append additional instructions.
+#
+## Feedback?
+#
+# Let us know what you think in Slack: #team-butterfly
+#
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  claude-review:
+    uses: leanix/shared-github-workflows/.github/workflows/claude-code-review.yml@main
+    secrets:
+      INJECTED_SECRET_STORE_CREDENTIALS: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}

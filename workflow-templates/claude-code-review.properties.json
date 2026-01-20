@@ -1,0 +1,9 @@
+{
+    "name": "Claude Code Review",
+    "description": "AI-powered code reviews for your pull requests using Claude",
+    "iconName": "octicon code-review",
+    "categories": [
+        "code-review"
+    ],
+    "filePatterns": []
+}
