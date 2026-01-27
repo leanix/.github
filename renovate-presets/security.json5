@@ -1,0 +1,6 @@
+{
+    // Display OSV vulnerability alerts in the dependency dashboard
+    "dependencyDashboardOSVVulnerabilitySummary": "all",
+    // Enable OSV vulnerability alerts for all repositories (experimental feature)
+    "osvVulnerabilityAlerts": true
+}
