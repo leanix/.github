@@ -1,6 +1,6 @@
 # Renovate Presets
 
-This directory contains shareable Renovate configuration presets that can be used across multiple repositories in your organization.
+This directory contains shareable Renovate configuration presets that can be used across multiple repositories in your organization. The presets can be added to the `renovate.json` file in the `extends` block.
 
 ## Available Presets
 
