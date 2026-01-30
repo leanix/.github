@@ -21,7 +21,7 @@ jobs:
           files: |
             renovate.json
             default.json
-            renovate-presets/**
+            renovate-presets/**/*.{json,json5}
           matrix: true
 
   validate-renovate-configs:
