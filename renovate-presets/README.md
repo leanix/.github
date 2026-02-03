@@ -14,6 +14,11 @@ This directory contains shareable Renovate configuration presets that can be use
 - Merge window: Monday-Friday, 9:00-13:00
 - Uses branch automerge strategy (merges without creating PRs)
 
+**Prerequisites**
+
+- "Allow auto-merge" enabled in repository settings
+- Required CI workflows triggered on push to renovate's branches 
+
 **Usage**:
 ```json
 {
