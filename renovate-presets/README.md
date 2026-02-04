@@ -17,7 +17,8 @@ This directory contains shareable Renovate configuration presets that can be use
 **Prerequisites**
 
 - "Allow auto-merge" enabled in repository settings
-- Required CI workflows triggered on push to renovate's branches 
+- Required CI workflows triggered on push to renovate's branches
+- Allow `renovate[bot]` to bypass custom RuleSets protecting the default branch
 
 **Usage**:
 ```json
