@@ -45,6 +45,8 @@ This directory contains shareable Renovate configuration presets that can be use
 - Displays OSV vulnerability alerts in the Renovate dependency dashboard
 - Enables OSV vulnerability scanning for all dependencies (experimental feature)
 - Provides comprehensive vulnerability information from the [OSV database](https://osv.dev/)
+- Labels PRs with the CVE severity
+- suffixes commits and PR title with the CVE severity
 
 **Usage**:
 ```json

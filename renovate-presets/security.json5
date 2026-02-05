@@ -2,5 +2,22 @@
     // Display OSV vulnerability alerts in the dependency dashboard
     "dependencyDashboardOSVVulnerabilitySummary": "all",
     // Enable OSV vulnerability alerts for all repositories (experimental feature)
-    "osvVulnerabilityAlerts": true
+    "osvVulnerabilityAlerts": true,
+    // Configuration for Security updates
+    "vulnerabilityAlerts": {
+        // no grouping
+        "groupName": null,
+        // may be created at any time
+        "schedule": [],
+        // no dashboard apporval required
+        "dependencyDashboardApproval": false,
+        // specific minimum release age for security updates
+        "minimumReleaseAge": "5 days",
+        // add label indicating sverity of CVEs
+        "addLabels": ["SEVERITY:{{vulnerabilitySeverity}}"],
+        // add commitMessageSuffix indicating sverity of CVEs
+        "commitMessageSuffix": "[SECURITY] [SEVERITY: {{vulnerabilitySeverity}}{{#if (or (equals vulnerabilitySeverity 'MEDIUM') (equals vulnerabilitySeverity 'MODERATE'))}} 🟡{{else if (or (equals vulnerabilitySeverity 'HIGH') (equals vulnerabilitySeverity 'CRITICAL'))}} 🔴{{/if}}]",
+        // use the lowest possible version that fixes the vulnerability
+        "vulnerabilityFixStrategy": "lowest"
+    }
 }
