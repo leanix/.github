@@ -22,6 +22,11 @@
       "matchDatasources": ["npm"],
       "matchPackageNames": ["@leanix/*"],
       "minimumReleaseAge": null
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["gradle/*"],
+      "allowedVersions": "<6"
     }
   ]
 }
