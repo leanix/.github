@@ -4,7 +4,49 @@ This directory contains shareable Renovate configuration presets that can be use
 
 ## Available Presets
 
+### automerge.json5
+
+> [!INFO]
+> This preset uses `platformAutomerge` and `automerge`. Renovate loses control over the automergeSchedule
+> because Github will merge PRs as soon as all required checks have passed.
+> To apply updates during business hours this preset limits the PR creation to business hours using `schedule`
+
+**Purpose**: Enables automatic pull request merging for low-risk updates during business hours.
+
+**Features**:
+- Automatically merges minor, patch, and digest updates
+- Operates on Berlin timezone (Europe/Berlin)
+- PR creation window: Monday-Friday, 9:00-13:00
+- Uses pull request automerge strategy
+- Works well with merge queues enabled
+
+**Prerequisites**
+
+- "Allow auto-merge" enabled in repository settings
+- Github App "renovate-approve" installed on the repository
+- Required CI workflows triggered on push to renovate's branches
+- Allow `renovate[bot]` to bypass custom RuleSets protecting the default branch
+- CI workflow trigger on `merge_group:` event or on push to temporary merge queue branches *(Only if Merge Queue enabled)*
+
+**Usage**:
+```json
+{
+  "extends": [
+    "github>leanix/.github//renovate-presets/automerge.json5"
+  ]
+}
+```
+
+**When to use**:
+- Repositories with comprehensive test coverage
+- Projects where minor/patch updates are considered safe
+- Teams that want to reduce PR noise for routine updates
+
 ### branch-merge.json
+
+> [!IMPORTANT]
+> This preset does not work properly if the repository has merge queues enabled.
+> For that scenario use the `autromerge.json5` preset instead.
 
 **Purpose**: Enables automatic branch merging for low-risk updates during business hours.
 
