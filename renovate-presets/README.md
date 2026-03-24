@@ -6,7 +6,7 @@ This directory contains shareable Renovate configuration presets that can be use
 
 ### automerge.json5
 
-> [!INFO]
+> [!NOTE]
 > This preset uses `platformAutomerge` and `automerge`. Renovate loses control over the automergeSchedule
 > because Github will merge PRs as soon as all required checks have passed.
 > To apply updates during business hours this preset limits the PR creation to business hours using `schedule`
