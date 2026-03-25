@@ -22,7 +22,9 @@ Prerequisites for this preset:
             "automerge": true,
             "automergeType": "pr",
             "automergeStrategy": "auto",
-            "platformAutomerge": true
+            "platformAutomerge": true,
+            "prCreation": "not-pending",
+            "internalChecksFilter": "strict"
         }
     ]
 }
