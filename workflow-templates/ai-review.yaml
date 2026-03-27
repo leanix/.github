@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get credentials
-        uses: leanix/secrets-action@master
+        uses: leanix/secrets-action@6ec670303bc327b7aabe1b02a4e7b9f79f528198 # master
         with:
           secret-store-credentials: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}
 
@@ -37,7 +37,7 @@ jobs:
           decoded_secret=$(echo "${{ env.GITHUB_REVIEW_ACTION_AICORE }}" | base64 --decode)
           echo "AICORE_SERVICE_KEY=$decoded_secret" >> $GITHUB_ENV
 
-      - uses: leanix/shared-github-workflows/ai-review@main
+      - uses: leanix/shared-github-workflows/ai-review@53da16f0211be2f4e7d07059d3bed1bfd3094ef9 # main
         with:
           # Specify the AI model to be used for creating reviews
           model: gpt-4o
