@@ -37,7 +37,7 @@ jobs:
           decoded_secret=$(echo "${{ env.GITHUB_REVIEW_ACTION_AICORE }}" | base64 --decode)
           echo "AICORE_SERVICE_KEY=$decoded_secret" >> $GITHUB_ENV
 
-      - uses: leanix/shared-github-workflows/ai-review@53da16f0211be2f4e7d07059d3bed1bfd3094ef9 # main
+      - uses: leanix/shared-github-workflows/ai-review@c51caa588d214fc4c76861f88596fb5282b89e48 # main
         with:
           # Specify the AI model to be used for creating reviews
           model: gpt-4o
