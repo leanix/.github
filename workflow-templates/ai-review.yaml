@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get credentials
-        uses: leanix/secrets-action@6ec670303bc327b7aabe1b02a4e7b9f79f528198 # master
+        uses: leanix/secrets-action@e977de4daad2c53acf496d12c375f6445fbbb7b1 # master
         with:
           secret-store-credentials: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}
 
