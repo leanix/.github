@@ -27,6 +27,11 @@
       "matchManagers": ["github-actions"],
       "matchPackageNames": ["gradle/*"],
       "allowedVersions": "<6"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["axios"],
+      "allowedVersions": "!/(1\\.14\\.1)|(0\\.30\\.4)/"
     }
   ]
 }
