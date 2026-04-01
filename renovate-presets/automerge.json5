@@ -24,7 +24,8 @@ Prerequisites for this preset:
             "automergeStrategy": "auto",
             "platformAutomerge": true,
             "prCreation": "not-pending",
-            "internalChecksFilter": "strict"
+            "internalChecksFilter": "strict",
+            "rebaseWhen": "conflicted"
         }
     ]
 }

@@ -25,7 +25,6 @@ This directory contains shareable Renovate configuration presets that can be use
 - "Allow auto-merge" enabled in repository settings
 - Github App "renovate-approve" installed on the repository
 - Required CI workflows triggered on push to renovate's branches
-- Allow `renovate[bot]` to bypass custom RuleSets protecting the default branch
 - CI workflow trigger on `merge_group:` event or on push to temporary merge queue branches *(Only if Merge Queue enabled)*
 
 **Usage**:
