@@ -1,9 +1,0 @@
-{
-    "name": "AI Code Review",
-    "description": "AI powered code reviews for your pull requests",
-    "iconName": "octicon comment",
-    "categories": [
-        "code-review"
-    ],
-    "filePatterns": []
-}
