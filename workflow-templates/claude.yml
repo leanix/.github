@@ -34,6 +34,6 @@ on:
 
 jobs:
   claude:
-    uses: leanix/shared-github-workflows/.github/workflows/claude.yml@ca8560eaa3b2e8fa019bdd7e067b4e31c0bd914d # main
+    uses: leanix/shared-github-workflows/.github/workflows/claude.yml@b7ac7fa1823f47d5cb0563e066c30a661270c4c7 # main
     secrets:
       INJECTED_SECRET_STORE_CREDENTIALS: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}
