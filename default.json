@@ -5,6 +5,7 @@
     ":pinAllExceptPeerDependencies",
     "github>leanix/.github//renovate-presets/security.json5"
   ],
+  "rebaseWhen": "conflicted",
   "internalChecksFilter": "strict",
   "minimumReleaseAge": "5 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
