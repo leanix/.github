@@ -36,6 +36,6 @@ concurrency:
 
 jobs:
   claude-review:
-    uses: leanix/shared-github-workflows/.github/workflows/claude-code-review.yml@a22acff7cbf198a2e143d854b31392fda76d765f # main
+    uses: leanix/shared-github-workflows/.github/workflows/claude-code-review.yml@8334696d495b031dbaeb06f3fe1e9fe1162bfc78 # main
     secrets:
       INJECTED_SECRET_STORE_CREDENTIALS: ${{ secrets.INJECTED_SECRET_STORE_CREDENTIALS }}
