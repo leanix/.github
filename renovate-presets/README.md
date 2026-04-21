@@ -15,6 +15,7 @@ This directory contains shareable Renovate configuration presets that can be use
 
 **Features**:
 - Automatically merges minor, patch, and digest updates
+- Automatically merges lock file maintenance PRs
 - Operates on Berlin timezone (Europe/Berlin)
 - PR creation window: Monday-Friday, 9:00-13:00
 - Uses pull request automerge strategy
