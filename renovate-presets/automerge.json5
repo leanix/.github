@@ -17,6 +17,12 @@ Prerequisites for this preset:
             "schedule": [
                 "* 9-13 * * 1-5"
             ],
+            /* Maintain backwards compatibility for repositories
+            that do not require a merge queue and thus control
+            automerges in renovate still */
+            "automergeSchedule": [
+                "* 9-13 * * 1-5"
+            ],
             "automerge": true,
             "automergeType": "pr",
             "automergeStrategy": "auto",
