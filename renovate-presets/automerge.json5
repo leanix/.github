@@ -14,6 +14,9 @@ Prerequisites for this preset:
                 "patch",
                 "digest"
             ],
+            // Create PRs only during working hours
+            // This controls the update window for scenarios using platform automerge
+            // when renovate loses control over the merge schedule
             "schedule": [
                 "* 9-13 * * 1-5"
             ],
@@ -26,7 +29,10 @@ Prerequisites for this preset:
             "automerge": true,
             "automergeType": "pr",
             "automergeStrategy": "auto",
+            // Enable Github automerge (renovate loses control over the merge schedule)
             "platformAutomerge": true,
+            // Create PRs only if the stability days check has passed
+            // This prevents premature PR merges
             "prCreation": "not-pending",
             "internalChecksFilter": "strict",
             "rebaseWhen": "conflicted"
