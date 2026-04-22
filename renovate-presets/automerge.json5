@@ -12,7 +12,8 @@ Prerequisites for this preset:
             "matchUpdateTypes": [
                 "minor",
                 "patch",
-                "digest"
+                "digest",
+                "lockFileMaintenance"
             ],
             // Create PRs only during working hours
             // This controls the update window for scenarios using platform automerge
@@ -37,17 +38,5 @@ Prerequisites for this preset:
             "internalChecksFilter": "strict",
             "rebaseWhen": "conflicted"
         }
-    ],
-    "lockFileMaintenance": {
-        "schedule": [
-            "* 9-13 * * 1-5"
-        ],
-        "automerge": true,
-        "automergeType": "pr",
-        "automergeStrategy": "auto",
-        "platformAutomerge": true,
-        "prCreation": "not-pending",
-        "internalChecksFilter": "strict",
-        "rebaseWhen": "conflicted"
-    }
+    ]
 }
