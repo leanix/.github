@@ -14,13 +14,25 @@ Prerequisites for this preset:
                 "patch",
                 "digest"
             ],
+            // Create PRs only during working hours
+            // This controls the update window for scenarios using platform automerge
+            // when renovate loses control over the merge schedule
             "schedule": [
+                "* 9-13 * * 1-5"
+            ],
+            /* Maintain backwards compatibility for repositories
+            that do not require a merge queue and thus control
+            automerges in renovate still */
+            "automergeSchedule": [
                 "* 9-13 * * 1-5"
             ],
             "automerge": true,
             "automergeType": "pr",
             "automergeStrategy": "auto",
+            // Enable Github automerge (renovate loses control over the merge schedule)
             "platformAutomerge": true,
+            // Create PRs only if the stability days check has passed
+            // This prevents premature PR merges
             "prCreation": "not-pending",
             "internalChecksFilter": "strict",
             "rebaseWhen": "conflicted"
