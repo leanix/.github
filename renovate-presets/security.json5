@@ -4,6 +4,23 @@
   // Enable OSV vulnerability alerts for all repositories (experimental feature)
   osvVulnerabilityAlerts: true,
   // Configuration for Security updates
+
+  // Define minimumReleaseAge, to reduce the risk of supplyChain attacks
+  internalChecksFilter: "strict",
+  minimumReleaseAge: "5 days",
+  minimumReleaseAgeBehaviour: "timestamp-optional",
+  packageRules: [
+    // Override minimumReleaseAge configured in packageRule in security:minimumReleaseAgeNpm
+    // preset that is more specific and overrides the global definition above
+    {
+      "internalChecksFilter": "strict",
+      "matchDatasources": [
+        "npm"
+      ],
+      "minimumReleaseAge": "5 days"
+    },
+  ],
+
   vulnerabilityAlerts: {
     // no grouping
     groupName: null,
