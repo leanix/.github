@@ -1,17 +1,11 @@
 {
-    "timezone": "Europe/Berlin",
-    "packageRules": [
-        {
-            "matchUpdateTypes": [
-                "minor",
-                "patch",
-                "digest"
-            ],
-            "automergeSchedule": [
-                "* 9-13 * * 1-5"
-            ],
-            "automerge": true,
-            "automergeType": "branch"
-        }
-    ]
+  "timezone": "Europe/Berlin",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automergeSchedule": ["* 9-13 * * 1-5"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
 }
