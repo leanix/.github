@@ -19,6 +19,16 @@
       ],
       "minimumReleaseAge": "5 days"
     },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@leanix/*"],
+      "minimumReleaseAge": null
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["leanix/*"],
+      "minimumReleaseAge": null
+    },
   ],
 
   vulnerabilityAlerts: {
