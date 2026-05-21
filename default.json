@@ -18,11 +18,6 @@
       "allowedVersions": "<5.0"
     },
     {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["@leanix/*"],
-      "minimumReleaseAge": null
-    },
-    {
       "matchManagers": ["github-actions"],
       "matchPackageNames": ["gradle/*"],
       "allowedVersions": "<6"
