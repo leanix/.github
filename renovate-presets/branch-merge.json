@@ -4,7 +4,7 @@
     {
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "automergeSchedule": ["* 9-13 * * 1-5"],
-      "automerge": false,
+      "automerge": true,
       "automergeType": "branch"
     }
   ]
