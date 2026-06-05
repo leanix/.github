@@ -22,6 +22,14 @@
   ],
 
   vulnerabilityAlerts: {
+    // enable automerging of security updates to reduce the time to fix vulnerabilities
+    automerge: true,
+    // Enable Github automerge
+    platformAutomerge: true,
+    // Create PRs only if the stability days check has passed
+    prCreation: "not-pending",
+    // This prevents premature PR merges
+    internalChecksFilter: "strict",
     // no grouping
     groupName: null,
     // may be created at any time
