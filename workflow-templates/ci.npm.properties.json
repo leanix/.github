@@ -1,0 +1,13 @@
+{
+    "name": "npm CI (test-release-report)",
+    "description": "Standard CI workflow for npm projects released as Docker images.",
+    "iconName": "check-circle-fill",
+    "categories": [
+        "JavaScript",
+        "TypeScript"
+    ],
+    "filePatterns": [
+        "package.json$",
+        ".nvmrc$"
+    ]
+}

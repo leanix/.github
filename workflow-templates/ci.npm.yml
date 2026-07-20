@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches:
+      - $default_branch
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+
+env:
+  ACTION_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+jobs:
+  ci:
+    if: ${{ !github.event.pull_request.draft }}
+    permissions:
+      contents: write
+      actions: write
+      packages: read
+    uses: leanix/shared-github-workflows/.github/workflows/test-release-report.npm.reusable.yml@e1282e41e08bf67c4e6835c20c07c85e3254f5ae
+    secrets: inherit
+    with:
+      node-version-file: ".nvmrc"
