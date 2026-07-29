@@ -5,6 +5,7 @@
     ":pinAllExceptPeerDependencies",
     "github>leanix/.github//renovate-presets/security.json5"
   ],
+  "prHourlyLimit": 10,
   "rebaseWhen": "conflicted",
   "reviewersFromCodeOwners": true,
   "packageRules": [
