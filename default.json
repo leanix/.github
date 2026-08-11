@@ -6,6 +6,7 @@
     "github>leanix/.github//renovate-presets/security.json5"
   ],
   "prHourlyLimit": 10,
+  "branchConcurrentLimit": 0,
   "rebaseWhen": "conflicted",
   "reviewersFromCodeOwners": true,
   "packageRules": [
