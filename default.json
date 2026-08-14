@@ -28,6 +28,15 @@
       "matchManagers": ["npm"],
       "matchPackageNames": ["axios"],
       "allowedVersions": "!/(1\\.14\\.1)|(0\\.30\\.4)/"
+    },
+    {
+      "matchDatasources": [
+        "maven"
+      ],
+      "registryUrls": [
+        "https://common.repositories.cloud.sap/artifactory/maven-central",
+        "https://repo1.maven.org/maven2"
+      ]
     }
   ]
 }
