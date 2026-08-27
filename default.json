@@ -50,7 +50,8 @@
         "maven"
       ],
       "registryUrls": [
-        "https://common.repositories.cloud.sap/artifactory/maven-central"
+        "https://common.repositories.cloud.sap/artifactory/maven-central",
+        "https://common.repositories.cloud.sap/artifactory/plugins.gradle.org-m2"
       ]
     }
   ]
