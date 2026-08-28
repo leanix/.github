@@ -1,0 +1,62 @@
+{
+  "enabled": true,
+  "extends": [
+    "config:best-practices",
+    ":pinAllExceptPeerDependencies",
+    "local>leanix/.github//renovate-presets/security.json5"
+  ],
+  "prHourlyLimit": 10,
+  "branchConcurrentLimit": 0,
+  "rebaseWhen": "conflicted",
+  "reviewersFromCodeOwners": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "labels": ["major version update"]
+    },
+    {
+      "matchPackageNames": [
+        "io.kubernetes:client-java"
+      ],
+      "allowedVersions": "!/.*-legacy$/"
+    },
+    {
+      "matchPackageNames": [
+        "org.liquibase:*",
+        "liquibase*"
+      ],
+      "matchDatasources": [
+        "maven",
+        "docker"
+      ],
+      "allowedVersions": "<5.0"
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "gradle/*"
+      ],
+      "allowedVersions": "<6"
+    },
+    {
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "axios"
+      ],
+      "allowedVersions": "!/(1\\.14\\.1)|(0\\.30\\.4)/"
+    },
+    {
+      "matchDatasources": [
+        "maven"
+      ],
+      "registryUrls": [
+        "https://common.repositories.cloud.sap/artifactory/maven-central",
+        "https://common.repositories.cloud.sap/artifactory/plugins.gradle.org-m2"
+      ]
+    }
+  ]
+}
