@@ -3,7 +3,7 @@
   "extends": [
     "config:best-practices",
     ":pinAllExceptPeerDependencies",
-    "github>leanix/.github//renovate-presets/security.json5"
+    "local>leanix/.github//renovate-presets/security.json5"
   ],
   "prHourlyLimit": 10,
   "branchConcurrentLimit": 0,
