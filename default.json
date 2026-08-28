@@ -11,6 +11,10 @@
   "reviewersFromCodeOwners": true,
   "packageRules": [
     {
+      "matchUpdateTypes": ["major"],
+      "labels": ["major version update"]
+    },
+    {
       "matchPackageNames": [
         "io.kubernetes:client-java"
       ],
