@@ -32,7 +32,7 @@ This directory contains shareable Renovate configuration presets that can be use
 ```json
 {
   "extends": [
-    "github>leanix/.github//renovate-presets/automerge.json5"
+    "local>leanix/.github//renovate-presets/automerge.json5"
   ]
 }
 ```
@@ -66,7 +66,7 @@ This directory contains shareable Renovate configuration presets that can be use
 ```json
 {
   "extends": [
-    "github>leanix/.github//renovate-presets/branch-merge.json"
+    "local>leanix/.github//renovate-presets/branch-merge.json"
   ]
 }
 ```
@@ -94,7 +94,7 @@ This directory contains shareable Renovate configuration presets that can be use
 ```json
 {
   "extends": [
-    "github>leanix/.github//renovate-presets/security.json5"
+    "local>leanix/.github//renovate-presets/security.json5"
   ]
 }
 ```
@@ -122,7 +122,7 @@ The main [default.json](../default.json) preset in the repository root provides 
 ```json
 {
   "extends": [
-    "github>leanix/.github"
+    "local>leanix/.github"
   ]
 }
 ```
@@ -137,8 +137,8 @@ You can combine multiple presets to build your ideal configuration:
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>leanix/.github",
-    "github>leanix/.github//renovate-presets/branch-merge.json"
+    "local>leanix/.github",
+    "local>leanix/.github//renovate-presets/branch-merge.json"
   ]
 }
 ```
@@ -152,7 +152,7 @@ To add a new preset:
 1. Create a new `.json` or `.json5` file in this directory
 2. Define your Renovate configuration options
 3. Document the preset in this README
-4. Reference it using: `github>leanix/.github//renovate-presets/<filename>`
+4. Reference it using: `local>leanix/.github//renovate-presets/<filename>`
 
 ## Resources
 
