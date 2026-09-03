@@ -7,41 +7,56 @@ Prerequisites for this preset:
 */
 {
   timezone: "Europe/Berlin",
+  // instruct renovate to create pull requests
+  automergeType: "pr",
+  // Renovate decides how to merge for maximum compatibility with various repo configs
+  automergeStrategy: "auto",
+  // This prevents premature PR merges
+  internalChecksFilter: "strict",
+  // Enable Github automerge (renovate loses control over the merge schedule)
+  platformAutomerge: true,
+  // Create PRs only if the stability days check has passed
+  prCreation: "not-pending",
+  // Wait for passing status checks before creating PRs
+  // 0 = immediate, to support cases where checks run only on: pull_request
+  prNotPendingHours: 0,
+  // Only rebase if conflicted, else merge queue handles
+  rebaseWhen: "conflicted",
+  // perform changes only during office hours
+  schedule: ["* 8-15 * * 1-5"],
+  automergeSchedule: ["* 8-15 * * 1-5"],
   packageRules: [
     {
+      // Enable automerge for non major updates (see https://leanix.atlassian.net/wiki/spaces/SEC/pages/735347040/Change+Management+Procedure#6.3-Change-requests-by-Dependabot%2C-Renovate)
       matchUpdateTypes: ["minor", "patch", "digest", "lockFileMaintenance"],
       automerge: true,
-      automergeType: "pr",
-      automergeStrategy: "auto",
-      // This prevents premature PR merges
-      internalChecksFilter: "strict",
-      // Enable Github automerge (renovate loses control over the merge schedule)
-      platformAutomerge: true,
-      // Create PRs only if the stability days check has passed
-      prCreation: "not-pending",
-      prNotPendingHours: 0,
-      rebaseWhen: "conflicted",
     },
     {
-      matchDepTypes: ["devDependencies"],
-      semanticCommitType: "chore",
-      schedule: ["* 0-7,16-23 * * *"],
-      automergeSchedule: ["* 0-7,16-23 * * *"],
-      prNotPendingHours: 0,
-    },
-    {
-      matchDepTypes: ["dependencies", "peerDependencies"],
-      matchUpdateTypes: ["minor", "patch", "digest", "lockFileMaintenance"],
-      semanticCommitType: "fix",
-      schedule: ["* 8-15 * * 1-5"],
-      automergeSchedule: ["* 8-15 * * 1-5"],
-    },
-    {
-      matchDepTypes: ["devDependencies"],
+      // Disable automerge for major updates (see https://leanix.atlassian.net/wiki/spaces/SEC/pages/735347040/Change+Management+Procedure#6.3-Change-requests-by-Dependabot%2C-Renovate)
       matchUpdateTypes: ["major"],
-      semanticCommitType: "fix",
-      schedule: ["* * * * *"],
       automerge: false,
     },
+    {
+      // Internal chore updates without consumer impact
+      "matchFileNames": [".github/workflows/**"],
+      semanticCommitType: "chore",
+    },
+    {
+      // Internal chore updates without consumer impact
+      matchDepTypes: ["devDependencies"],
+      semanticCommitType: "chore",
+    },
+    {
+      // External consumer facing updates leading to a new version
+      matchDepTypes: ["dependencies", "peerDependencies"],
+      semanticCommitType: "fix",
+    },
+    {
+      // Dev dependencies without consumer impact can be updated nightly
+      // when CI capacity is not needed for developers
+      matchDepTypes: ["devDependencies"],
+      schedule: ["* 0-7,16-23 * * *"],
+      automergeSchedule: ["* 0-7,16-23 * * *"],
+    }
   ],
 }
