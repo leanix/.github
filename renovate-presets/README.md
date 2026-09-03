@@ -14,6 +14,7 @@ This directory contains shareable Renovate configuration presets that can be use
 **Purpose**: Enables automatic pull request merging for low-risk updates during business hours.
 
 **Features**:
+
 - Automatically merges minor, patch, and digest updates
 - Automatically merges lock file maintenance PRs
 - Operates on Berlin timezone (Europe/Berlin)
@@ -21,7 +22,7 @@ This directory contains shareable Renovate configuration presets that can be use
 - Uses pull request automerge strategy
 - Works well with merge queues enabled
 
-**Prerequisites**
+**Prerequisites**:
 
 - "Allow auto-merge" enabled in repository settings
 - Github App "renovate-approve" installed on the repository
@@ -29,6 +30,7 @@ This directory contains shareable Renovate configuration presets that can be use
 - CI workflow trigger on `merge_group:` event or on push to temporary merge queue branches *(Only if Merge Queue enabled)*
 
 **Usage**:
+
 ```json
 {
   "extends": [
@@ -38,6 +40,7 @@ This directory contains shareable Renovate configuration presets that can be use
 ```
 
 **When to use**:
+
 - Repositories with comprehensive test coverage
 - Projects where minor/patch updates are considered safe
 - Teams that want to reduce PR noise for routine updates
@@ -51,18 +54,20 @@ This directory contains shareable Renovate configuration presets that can be use
 **Purpose**: Enables automatic branch merging for low-risk updates during business hours.
 
 **Features**:
+
 - Automatically merges minor, patch, and digest updates
 - Operates on Berlin timezone (Europe/Berlin)
 - Merge window: Monday-Friday, 9:00-13:00
 - Uses branch automerge strategy (merges without creating PRs)
 
-**Prerequisites**
+**Prerequisites**:
 
 - "Allow auto-merge" enabled in repository settings
 - Required CI workflows triggered on push to renovate's branches
 - Allow `renovate[bot]` to bypass custom RuleSets protecting the default branch
 
 **Usage**:
+
 ```json
 {
   "extends": [
@@ -72,9 +77,51 @@ This directory contains shareable Renovate configuration presets that can be use
 ```
 
 **When to use**:
+
 - Repositories with comprehensive test coverage
 - Projects where minor/patch updates are considered safe
 - Teams that want to reduce PR noise for routine updates
+
+### semantic-automerge.json5
+
+> [!NOTE]
+> This preset uses `platformAutomerge`. Renovate loses control over the `automergeSchedule`
+> because GitHub will merge PRs as soon as all required checks have passed.
+> PR creation is limited to business hours via `schedule` to keep updates within office hours.
+
+**Purpose**: Enables automatic pull request merging for low-risk updates during business hours, with semantic commit types applied based on dependency and file context.
+
+**Features**:
+
+- Automatically merges minor, patch, digest, and lock file maintenance updates
+- Operates on Berlin timezone (Europe/Berlin)
+- PR creation and automerge window: Monday-Friday, 8:00-15:59
+- Dev dependency updates run nightly, 16:00-7:59
+- Semantic commit types: `chore` for workflow files and dev dependencies, `fix` for runtime dependencies
+- Uses pull request automerge strategy with `rebaseWhen: "conflicted"` for merge queue compatibility
+
+**Prerequisites**:
+
+- "Allow auto-merge" enabled in repository settings
+- GitHub App "renovate-approve" installed on the repository
+- Required CI workflows triggered on push to renovate's branches
+- CI workflow trigger on `merge_group:` event or on push to temporary merge queue branches *(Only if Merge Queue enabled)*
+
+**Usage**:
+
+```json
+{
+  "extends": [
+    "local>leanix/.github//renovate-presets/semantic-automerge.json5"
+  ]
+}
+```
+
+**When to use**:
+
+- Repositories that use semantic versioning / conventional commits and want automerge with correct commit types
+- Projects where minor/patch updates are considered safe but major updates need manual review
+- Teams that want dev dependency updates to run outside business hours to preserve CI capacity
 
 ### security.json5
 
@@ -84,6 +131,7 @@ This directory contains shareable Renovate configuration presets that can be use
 **Purpose**: Integrates OSV (Open Source Vulnerabilities) database to enhance security monitoring.
 
 **Features**:
+
 - Displays OSV vulnerability alerts in the Renovate dependency dashboard
 - Enables OSV vulnerability scanning for all dependencies (experimental feature)
 - Provides comprehensive vulnerability information from the [OSV database](https://osv.dev/)
@@ -91,6 +139,7 @@ This directory contains shareable Renovate configuration presets that can be use
 - suffixes commits and PR title with the CVE severity
 
 **Usage**:
+
 ```json
 {
   "extends": [
@@ -100,6 +149,7 @@ This directory contains shareable Renovate configuration presets that can be use
 ```
 
 **When to use**:
+
 - All repositories that want enhanced security vulnerability detection
 - Projects that need to comply with security standards
 - Teams that want proactive security alerts beyond standard vulnerability databases
@@ -109,6 +159,7 @@ This directory contains shareable Renovate configuration presets that can be use
 The main [default.json](../default.json) preset in the repository root provides organization-wide defaults:
 
 **Features**:
+
 - Best practices configuration from Renovate
 - Pin all dependencies except peer dependencies
 - 5-day minimum release age for stability (with timestamp-optional fallback)
@@ -119,6 +170,7 @@ The main [default.json](../default.json) preset in the repository root provides 
   - Bypasses minimum release age for internal `@leanix/*` packages
 
 **Usage**:
+
 ```json
 {
   "extends": [
