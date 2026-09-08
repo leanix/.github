@@ -12,8 +12,8 @@ which typically require manual review due to infrastructure impact.
   extends: ["local>leanix/.github//renovate-presets/automerge.json5"],
   packageRules: [
     {
-      // Terraform modules and providers require manual review
-      matchManagers: ["terraform", "terraform-version", "terragrunt"],
+      // Terraform/Terragrunt modules, providers, and CLI versions require manual review
+      matchManagers: ["terraform", "terraform-version", "terragrunt", "terragrunt-version"],
       automerge: false,
       platformAutomerge: false,
     },
