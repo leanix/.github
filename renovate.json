@@ -2,6 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>leanix/.github//renovate-presets/default.json5",
-    "local>leanix/.github//renovate-presets/automerge.json5"
+    "local>leanix/.github//renovate-presets/semantic-automerge.json5"
   ]
 }
