@@ -45,6 +45,43 @@ This directory contains shareable Renovate configuration presets that can be use
 - Projects where minor/patch updates are considered safe
 - Teams that want to reduce PR noise for routine updates
 
+### infrastructure-automerge.json5
+
+> [!NOTE]
+> This preset uses `platformAutomerge` and `automerge` (inherited from `automerge.json5`). Renovate loses control over the automergeSchedule
+> because GitHub will merge PRs as soon as all required checks have passed.
+> To apply updates during business hours this preset limits the PR creation to business hours using `schedule`.
+
+**Purpose**: Enables automatic merging for low-risk updates in infrastructure repositories, while requiring manual review for all Terraform and Terragrunt dependency updates.
+
+**Features**:
+
+- Inherits all automerge behaviour from `automerge.json5`
+- Disables automerge for `terraform`, `terraform-version`, `terragrunt`, and `terragrunt-version` managers
+- All other dependency types (e.g. GitHub Actions, Docker) continue to automerge as normal
+
+**Prerequisites**:
+
+- "Allow auto-merge" enabled in repository settings
+- Github App "renovate-approve" installed on the repository
+- Required CI workflows triggered on push to renovate's branches
+- CI workflow trigger on `merge_group:` event or on push to temporary merge queue branches *(Only if Merge Queue enabled)*
+
+**Usage**:
+
+```json
+{
+  "extends": [
+    "local>leanix/.github//renovate-presets/infrastructure-automerge.json5"
+  ]
+}
+```
+
+**When to use**:
+
+- Infrastructure repositories managed with Terraform or Terragrunt
+- Teams that want automerge for non-infrastructure dependencies (Actions, Docker, etc.) but require manual review for provider/module/CLI version bumps
+
 ### branch-merge.json
 
 > [!IMPORTANT]
