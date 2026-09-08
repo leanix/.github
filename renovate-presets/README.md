@@ -160,6 +160,32 @@ This directory contains shareable Renovate configuration presets that can be use
 - Projects where minor/patch updates are considered safe but major updates need manual review
 - Teams that want dev dependency updates to run outside business hours to preserve CI capacity
 
+### group-major.json
+
+**Purpose**: Groups all major dependency updates into a single pull request for consolidated review.
+
+**Features**:
+
+- Groups all `major` update types under one PR titled "Update all major dependencies"
+- Disables automerge for major updates (manual review required)
+- Operates on Berlin timezone (Europe/Berlin)
+
+**Usage**:
+
+```json
+{
+  "extends": [
+    "local>leanix/.github//renovate-presets/group-major.json"
+  ]
+}
+```
+
+**When to use**:
+
+- Repositories that want to reduce PR noise by batching major updates together
+- Teams that require manual review for major version bumps but prefer a single consolidated PR over many individual ones
+- Projects combining this with an automerge preset to separate minor/patch (automerged) from major (manual) updates
+
 ### security.json5
 
 > [!NOTE]
