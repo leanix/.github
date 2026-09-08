@@ -1,0 +1,11 @@
+{
+  "timezone": "Europe/Berlin",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "groupName": "Update all major dependencies",
+      "groupSlug": "all-major"
+    }
+  ]
+}
