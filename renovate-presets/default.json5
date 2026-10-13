@@ -58,18 +58,5 @@
         "https://common.repositories.cloud.sap/artifactory/plugins.gradle.org-m2"
       ]
     }
-  ],
-  // Provide an encrypted PAT for renovate to access dependencies in private repositories
-  // This is mainly used for updating our internal Github actions and workflows
-  //
-  // The PAT expires every year and needs to be renewed as described here:
-  // https://github.tools.sap/OSPO/renovate-controller/blob/9680b17e8e4e18a9e47d7cc89efe251c189807ee/docs/encrypted-secrets-private-modules.md#team-private-modules
-  "hostRules": [
-    {
-      "matchHost": "https://github.tools.sap",
-      "encrypted": {
-        "token": "hQIMAwR1iaGXn6+eAQ/9HbzJ2VRm9vESgGq0zHe13JFIjD7fJiJa9FI0kOEKZu2Np/1KH6MrQf2lROJosQnPgNvRyAenN+S58GcbyrtL6onk6UJn8BSP+bK8A7LgfdwNPyDaxOg7CgmeUR6AhV8xdDcmKCNFudFNxp9FUV6iS/WpmvYfyoe8TpSvqe3JtJPf9ggK1yELoXWImEZIGDD1IY0Tkp9Wp2g3Y45rFlIhAiwTkm3yTvxkxm4cp0eg8bupCK2olA1DSUE2TkcGYWdSJIyR9swZP5oBZ1WKi7JUE3r2GoDU8zjecevQ6nbXkYBpWOolY7tVeRp8WgpnCvOyZcjEUP6r0JGPCYRqSARfoPm9dOgqHW1mY1xxLnDXdQ/X0a9ObhLQTF7yHiQdJjxgdwqk9ryOhvGdpSxE5D5uToH2cWmKWa3zBa19CDSJJL4JCyqfMG5GqwxCSRJ0ZHQdLmj/SrjRCCBvrMokX+DKIlduAUmrkDYrrYNnt4U6iT86w+q/mjxOxAkXYX2hL++LhFWeLIwYeRjg8Uicfg1/wiQiwmDopIg3SQhq7rJqKAeNWq5ARPdCW/Mm0umfcRuctkfN+U2VybCtGkMVrC0cxcy6AAozGSsL0NAIH8krHbTuy/UNjVzP0dyk3bs+gGDWprY+0o3IMWLHPIrBv76Q2ydXfwIdK/pp8ctQixxH4srUtwEJAhDWtdL3nTN+RRPsWwwlx44uUfoP9W0prUd58hiWwn1ruWvxZBpNMCYeY0PFTZESCTLWOT47QSHKi/nDHkWtvM0X8zKoqtE+Y5K2AwZNE0sMQVK/xbMk7Unz2BNjKHqQzsXbO7WV4BvGYfEofwa+tqW7TY0g+Qpo1wWUYotj35G7ra8RTacUcrpWXQnwerYQjReaC2dyYR22iVroZPRxbf4D803qHttYSN/lk1kVUJGPvJM2Fw===8aNU"
-      }
-    }
   ]
 }
