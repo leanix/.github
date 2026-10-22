@@ -23,9 +23,9 @@ Prerequisites for this preset:
   // Only rebase if conflicted, else merge queue handles
   rebaseWhen: "conflicted",
   // perform changes only during office hours
-  schedule: ["* 9-15 * * 1-5"],
+  schedule: ["* 7-15 * * 1-5"],
   // automerge changes only during office hours
-  automergeSchedule: ["* 9-15 * * 1-5"],
+  automergeSchedule: ["* 7-15 * * 1-5"],
   // generally disable automerge except for the cases listed in packageRules
   automerge: false,
   packageRules: [
