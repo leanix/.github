@@ -2,6 +2,8 @@
   "enabled": true,
   "extends": [
     "config:best-practices",
+    "group:opentelemetry-jsMonorepo",
+    "group:opentelemetry-js-contribMonorepo",
     ":pinAllExceptPeerDependencies",
     "local>leanix/.github//renovate-presets/security.json5"
   ],
