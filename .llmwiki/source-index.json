@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "confluence-sources": {
+      "adapter": "confluence",
+      "items": {
+        "confluence-how-to-automate-dependency-updates-with-renovate-76931b3a5d": {
+          "attachments": {},
+          "derived_pages": [
+            "overview.md"
+          ],
+          "generation_status": "done",
+          "pending_sync_retry": false,
+          "provider_id": "confluence-how-to-automate-dependency-updates-with-renovate-76931b3a5d",
+          "resource": "confluence:https://leanix.atlassian.net/wiki/spaces/EN/pages/10026713103/How+to+Automate+Dependency+Updates+with+Renovate",
+          "sha256": "ef799c366c46e856aeb5a1d16b881ebf238fb1686664d825ac6f22319b411fae",
+          "source_revision": {
+            "scheme": "confluence-version",
+            "value": "37"
+          },
+          "sync_status": "in_sync",
+          "title": "How+to+Automate+Dependency+Updates+with+Renovate",
+          "tree_root_id": null
+        }
+      },
+      "selector": {}
+    },
+    "local-sources": {
+      "adapter": "local",
+      "items": {
+        "local-code-of-conduct-md-ffdbe3a1e7": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-code-of-conduct-md-ffdbe3a1e7",
+          "resource": "CODE_OF_CONDUCT.md",
+          "sha256": "ed63f67ad0d8163fa5563a1277edc3cf8ca07c54a986f0d047d60a5795ef58fd",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "ed63f67ad0d8163fa5563a1277edc3cf8ca07c54a986f0d047d60a5795ef58fd"
+          },
+          "sync_status": "in_sync",
+          "title": "CODE_OF_CONDUCT.md",
+          "tree_root_id": null
+        },
+        "local-readme-md-94486f8406": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-readme-md-94486f8406",
+          "resource": "renovate-presets/README.md",
+          "sha256": "be28674581349b1af5bd8a793028e20d6df4d837de4f7086048a336810ae4cea",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "be28674581349b1af5bd8a793028e20d6df4d837de4f7086048a336810ae4cea"
+          },
+          "sync_status": "in_sync",
+          "title": "README.md",
+          "tree_root_id": null
+        },
+        "local-readme-md-b335630551": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-readme-md-b335630551",
+          "resource": "README.md",
+          "sha256": "203e848c855d9b3fb9d07b873a0c66465fc6bd01f9dc97f2ec16a6ad9906da80",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "203e848c855d9b3fb9d07b873a0c66465fc6bd01f9dc97f2ec16a6ad9906da80"
+          },
+          "sync_status": "in_sync",
+          "title": "README.md",
+          "tree_root_id": null
+        },
+        "local-security-md-f6ed156e4b": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-security-md-f6ed156e4b",
+          "resource": "SECURITY.md",
+          "sha256": "d7fa5ad7978ec96b94f6cfb667e49e61753f1d172250aa3531c0179a15efd8e5",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "d7fa5ad7978ec96b94f6cfb667e49e61753f1d172250aa3531c0179a15efd8e5"
+          },
+          "sync_status": "in_sync",
+          "title": "SECURITY.md",
+          "tree_root_id": null
+        }
+      },
+      "selector": {
+        "directories": [
+          "."
+        ]
+      }
+    }
+  }
+}
