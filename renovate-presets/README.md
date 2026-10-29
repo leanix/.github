@@ -82,43 +82,6 @@ This directory contains shareable Renovate configuration presets that can be use
 - Infrastructure repositories managed with Terraform or Terragrunt
 - Teams that want automerge for non-infrastructure dependencies (Actions, Docker, etc.) but require manual review for provider/module/CLI version bumps
 
-### branch-merge.json
-
-> [!IMPORTANT]
-> This preset does not work properly if the repository has merge queues enabled.
-> For that scenario use the `autromerge.json5` preset instead.
-
-**Purpose**: Enables automatic branch merging for low-risk updates during business hours.
-
-**Features**:
-
-- Automatically merges minor, patch, and digest updates
-- Operates on Berlin timezone (Europe/Berlin)
-- Merge window: Monday-Friday, 9:00-13:00
-- Uses branch automerge strategy (merges without creating PRs)
-
-**Prerequisites**:
-
-- "Allow auto-merge" enabled in repository settings
-- Required CI workflows triggered on push to renovate's branches
-- Allow `renovate[bot]` to bypass custom RuleSets protecting the default branch
-
-**Usage**:
-
-```json
-{
-  "extends": [
-    "local>leanix/.github//renovate-presets/branch-merge.json"
-  ]
-}
-```
-
-**When to use**:
-
-- Repositories with comprehensive test coverage
-- Projects where minor/patch updates are considered safe
-- Teams that want to reduce PR noise for routine updates
-
 ### semantic-automerge.json5
 
 > [!NOTE]
@@ -227,12 +190,12 @@ You can combine multiple presets to build your ideal configuration:
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>leanix/.github",
-    "local>leanix/.github//renovate-presets/branch-merge.json"
+    "local>leanix/.github//renovate-presets/automerge.json5"
   ]
 }
 ```
 
-This example inherits the organization defaults and adds automatic branch merging for minor/patch updates.
+This example inherits the organization defaults and adds automatic pull request merging for minor, patch, digest, and lock file maintenance updates.
 
 ## Creating Custom Presets
 
