@@ -9,6 +9,7 @@ Prerequisites for this preset:
   "extends": [
     "local>leanix/.github//renovate-presets/automerge.json5"
   ],
+  semanticCommits: "enabled",
   packageRules: [
     {
       // Internal chore updates without consumer impact
