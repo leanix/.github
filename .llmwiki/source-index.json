@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "confluence-sources": {
+      "adapter": "confluence",
+      "items": {
+        "confluence-how-to-automate-dependency-updates-with-renovate-76931b3a5d": {
+          "attachments": {},
+          "derived_pages": [
+            "conventions/renovate-setup-and-best-practices.md",
+            "runbooks/renovate-troubleshooting.md",
+            "concepts/renovate-presets-overview.md"
+          ],
+          "generation_status": "done",
+          "pending_sync_retry": false,
+          "provider_id": "confluence-how-to-automate-dependency-updates-with-renovate-76931b3a5d",
+          "resource": "confluence:https://leanix.atlassian.net/wiki/spaces/EN/pages/10026713103/How+to+Automate+Dependency+Updates+with+Renovate",
+          "sha256": "ef799c366c46e856aeb5a1d16b881ebf238fb1686664d825ac6f22319b411fae",
+          "source_revision": {
+            "scheme": "confluence-version",
+            "value": "37"
+          },
+          "sync_status": "in_sync",
+          "title": "How+to+Automate+Dependency+Updates+with+Renovate",
+          "tree_root_id": null
+        },
+        "confluence-how-to-work-with-docker-hardened-images-98eaa47eee": {
+          "attachments": {},
+          "derived_pages": [
+            "concepts/docker-hardened-images-hccs.md",
+            "concepts/dhi-io-to-hccs-migration.md"
+          ],
+          "generation_status": "done",
+          "pending_sync_retry": false,
+          "provider_id": "confluence-how-to-work-with-docker-hardened-images-98eaa47eee",
+          "resource": "confluence:https://leanix.atlassian.net/wiki/spaces/EN/pages/10610999602/How+to+Work+with+Docker+Hardened+Images",
+          "sha256": "fe6f95b6800a3bdd4361e8d41abfa469bb2129d0dd899da8117dad84adff59e0",
+          "source_revision": {
+            "scheme": "confluence-version",
+            "value": "22"
+          },
+          "sync_status": "in_sync",
+          "title": "How+to+Work+with+Docker+Hardened+Images",
+          "tree_root_id": null
+        }
+      },
+      "selector": {}
+    },
+    "local-sources": {
+      "adapter": "local",
+      "items": {
+        "hyperspace-pr-bot-docs": {
+          "attachments": {},
+          "derived_pages": [
+            "services/hyperspace-pr-bot.md",
+            "concepts/hyperspace-pr-bot-setup.md"
+          ],
+          "generation_status": "done",
+          "pending_sync_retry": false,
+          "provider_id": "hyperspace-pr-bot-docs",
+          "resource": ".llmwiki-sources/hyperspace-pr-bot.md",
+          "sha256": "00b56ff0863c3dfb020e55f9991dd907bca926fb9b3a361b23699ac96654f254",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "00b56ff0863c3dfb020e55f9991dd907bca926fb9b3a361b23699ac96654f254"
+          },
+          "sync_status": "removed",
+          "title": "hyperspace-pr-bot.md",
+          "tree_root_id": null
+        },
+        "local-automerge-json5-c760ac3c35": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-automerge-json5-c760ac3c35",
+          "resource": "renovate-presets/automerge.json5",
+          "sha256": "9786e9cb7997a3994b6b98f8f74813b465b40642064ce31d7c063369ce21ddc7",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "9786e9cb7997a3994b6b98f8f74813b465b40642064ce31d7c063369ce21ddc7"
+          },
+          "sync_status": "in_sync",
+          "title": "automerge.json5",
+          "tree_root_id": null
+        },
+        "local-branch-merge-json-f66dc691f4": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-branch-merge-json-f66dc691f4",
+          "resource": "renovate-presets/branch-merge.json",
+          "sha256": "15e97c0aa4e5ee3e7e9fa38091770186e105b645974834ea21c0bfcfef57c1a6",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "15e97c0aa4e5ee3e7e9fa38091770186e105b645974834ea21c0bfcfef57c1a6"
+          },
+          "sync_status": "in_sync",
+          "title": "branch-merge.json",
+          "tree_root_id": null
+        },
+        "local-ci-npm-properties-json-2a199e0dbd": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-ci-npm-properties-json-2a199e0dbd",
+          "resource": "workflow-templates/ci.npm.properties.json",
+          "sha256": "1d1299ae1b2b6c2157390c70c8b04dbe64146aa2388f71d50be734bbab03f51f",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "1d1299ae1b2b6c2157390c70c8b04dbe64146aa2388f71d50be734bbab03f51f"
+          },
+          "sync_status": "in_sync",
+          "title": "ci.npm.properties.json",
+          "tree_root_id": null
+        },
+        "local-ci-npm-yml-8a8e1b4f8f": {
+          "attachments": {},
+          "derived_pages": [
+            "concepts/ci-npm-workflow-template.md"
+          ],
+          "generation_status": "done",
+          "pending_sync_retry": false,
+          "provider_id": "local-ci-npm-yml-8a8e1b4f8f",
+          "resource": "workflow-templates/ci.npm.yml",
+          "sha256": "a930631e9af578d99b2e37d534893b6de1f92ec5303fe9d9a5dae0440ba6949d",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "a930631e9af578d99b2e37d534893b6de1f92ec5303fe9d9a5dae0440ba6949d"
+          },
+          "sync_status": "in_sync",
+          "title": "ci.npm.yml",
+          "tree_root_id": null
+        },
+        "local-infrastructure-automerge-json5-8c26ec76e2": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-infrastructure-automerge-json5-8c26ec76e2",
+          "resource": "renovate-presets/infrastructure-automerge.json5",
+          "sha256": "2a1d820a28b253c571c260e691d13b59dc6e79815d2908aa8c2363228a9b2159",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "2a1d820a28b253c571c260e691d13b59dc6e79815d2908aa8c2363228a9b2159"
+          },
+          "sync_status": "in_sync",
+          "title": "infrastructure-automerge.json5",
+          "tree_root_id": null
+        },
+        "local-readme-md-94486f8406": {
+          "attachments": {},
+          "derived_pages": [
+            "concepts/renovate-presets-overview.md",
+            "conventions/renovate-automerge-presets.md",
+            "concepts/renovate-security-preset.md"
+          ],
+          "generation_status": "done",
+          "pending_sync_retry": false,
+          "provider_id": "local-readme-md-94486f8406",
+          "resource": "renovate-presets/README.md",
+          "sha256": "be28674581349b1af5bd8a793028e20d6df4d837de4f7086048a336810ae4cea",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "be28674581349b1af5bd8a793028e20d6df4d837de4f7086048a336810ae4cea"
+          },
+          "sync_status": "in_sync",
+          "title": "README.md",
+          "tree_root_id": null
+        },
+        "local-security-json5-d26f4669a2": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-security-json5-d26f4669a2",
+          "resource": "renovate-presets/security.json5",
+          "sha256": "ab8e3b68283b346508f17ee9df8c964995ad5a53811b11839c040f955ab2e624",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "ab8e3b68283b346508f17ee9df8c964995ad5a53811b11839c040f955ab2e624"
+          },
+          "sync_status": "in_sync",
+          "title": "security.json5",
+          "tree_root_id": null
+        },
+        "local-semantic-automerge-json5-c061dc4acb": {
+          "attachments": {},
+          "derived_pages": [],
+          "generation_status": "pending",
+          "pending_sync_retry": false,
+          "provider_id": "local-semantic-automerge-json5-c061dc4acb",
+          "resource": "renovate-presets/semantic-automerge.json5",
+          "sha256": "9072a539de7dbf38c1b98af2c18a50947757f04bf372fd8fe97acd7b5a7a8f7f",
+          "source_revision": {
+            "scheme": "sha256",
+            "value": "9072a539de7dbf38c1b98af2c18a50947757f04bf372fd8fe97acd7b5a7a8f7f"
+          },
+          "sync_status": "in_sync",
+          "title": "semantic-automerge.json5",
+          "tree_root_id": null
+        }
+      },
+      "selector": {}
+    }
+  }
+}
