@@ -23,11 +23,6 @@ Prerequisites for this preset:
       semanticCommitType: "chore",
     },
     {
-      // External consumer facing updates leading to a new version
-      matchDepTypes: ["dependencies", "peerDependencies"],
-      semanticCommitType: "fix",
-    },
-    {
       // Dev dependencies without consumer impact can be updated nightly
       // when CI capacity is not needed for developers
       matchDepTypes: ["devDependencies"],
