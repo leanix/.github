@@ -22,6 +22,8 @@ Prerequisites for this preset:
   prNotPendingHours: 0,
   // Only rebase if conflicted, else merge queue handles
   rebaseWhen: "conflicted",
+  // Keep branch updates, including conflict rebases, within the configured schedule
+  updateNotScheduled: false,
   // perform changes only during office hours
   schedule: ["* 7-15 * * 1-5"],
   // automerge changes only during office hours

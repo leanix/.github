@@ -9,7 +9,8 @@ This directory contains shareable Renovate configuration presets that can be use
 > [!NOTE]
 > This preset uses `platformAutomerge` and `automerge`. Renovate loses control over the automergeSchedule
 > because Github will merge PRs as soon as all required checks have passed.
-> To apply updates during business hours this preset limits the PR creation to business hours using `schedule`
+> This preset limits branch creation and updates to business hours using `schedule` and `updateNotScheduled: false`.
+> GitHub can still merge already queued PRs outside this window.
 
 **Purpose**: Enables automatic pull request merging for low-risk updates during business hours.
 
@@ -21,6 +22,8 @@ This directory contains shareable Renovate configuration presets that can be use
 - PR creation window: Monday-Friday, 07:00-15:59
 - Uses pull request automerge strategy
 - Works well with merge queues enabled
+- Only rebases conflicted branches (`rebaseWhen: "conflicted"`)
+- Restricts updates to existing branches to their configured schedule (`updateNotScheduled: false`), so conflict rebases wait until the next scheduled window
 
 **Prerequisites**:
 
@@ -97,6 +100,7 @@ This directory contains shareable Renovate configuration presets that can be use
 - Operates on Berlin timezone (Europe/Berlin)
 - PR creation and automerge window: Monday-Friday, 8:00-15:59
 - Dev dependency updates run nightly, 16:00-7:59
+- Inherits `updateNotScheduled: false`; existing branches, including conflict rebases, follow the applicable schedule, keeping dev dependency branch updates outside business hours
 - Semantic commit types: `chore` for workflow files and dev dependencies, `fix` for runtime dependencies
 - Uses pull request automerge strategy with `rebaseWhen: "conflicted"` for merge queue compatibility
 
