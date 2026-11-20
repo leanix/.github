@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:leanix:llm-wiki:source-index-v1",
+  "title": "llm-wiki source index v1",
+  "description": "The machine-managed registry of mutable sources known to an llm-wiki bundle.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "sources": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/collection"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "revision": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "value"
+      ],
+      "properties": {
+        "scheme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "syncStatus": {
+      "type": "string",
+      "enum": [
+        "in_sync",
+        "partial",
+        "blocked",
+        "removed"
+      ]
+    },
+    "attachment": {
+      "type": "object",
+      "required": [
+        "title",
+        "referenced",
+        "sync_status"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "referenced": {
+          "type": "boolean"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "sync_status": {
+          "$ref": "#/$defs/syncStatus"
+        }
+      },
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "provider_id",
+        "title",
+        "resource",
+        "sha256",
+        "sync_status"
+      ],
+      "properties": {
+        "provider_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "sync_status": {
+          "$ref": "#/$defs/syncStatus"
+        },
+        "pending_sync_retry": {
+          "type": "boolean"
+        },
+        "generation_status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "done",
+            "failed"
+          ]
+        },
+        "derived_pages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*\\.md$"
+          }
+        },
+        "attachments": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/attachment"
+          }
+        },
+        "tree_root_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "collection": {
+      "type": "object",
+      "required": [
+        "adapter",
+        "selector",
+        "items"
+      ],
+      "properties": {
+        "adapter": {
+          "type": "string",
+          "enum": [
+            "local",
+            "http",
+            "confluence"
+          ]
+        },
+        "selector": {
+          "type": "object",
+          "minProperties": 0,
+          "additionalProperties": true
+        },
+        "items": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/item"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
